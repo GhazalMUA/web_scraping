@@ -21,4 +21,5 @@ for repo in repositories:
     language=language.get_text(strip=True) if language else 'unknown'
     stars=repo.find('a' , attrs={'href':re.compile('\/stargazers')})
     stars=int(stars.get_text(strip=True)) if stars else 0
+    
     print(title,language,stars)
