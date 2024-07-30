@@ -33,6 +33,15 @@ class Scraper:
         tooye website namasha keyfiatha az pain be bala ziad mishan va 
         age y keyfiati vojod nadashte bashe, az bala vojod nadare.
         baray inkar miaym dictionary quality misazim va avale codemon mizarimesh
+        hala mikhaym keyfiat haye mojod ro be karbar neshon bedim va mikhyam addae
+        keyfiat neshon dade beshe masalan adade 720 ya adade 1080 .
+         
     '''
     
+    def get_qualities(self):
+        quali = qualities.keys()
+        links = self.get_all_links()
+        available_qualities=[]
+        for i in links:
+            available_qualities.append(list(qualities[i]))
     
