@@ -6,8 +6,27 @@
 
 # useful for handling different item types with a single interface
 from itemadapter import ItemAdapter
-
+import sqlite3
 
 class WikiPipeline:
+    
+    def __init__(self):
+        self.con= sqlite3.connect('countries.db')
+        self.cur = self.con.cursor()
+        self.create_table()
+        
+    def create_table(self):
+        self.cur.execute(""" CREATE TABLE IF NOT EXISTS country(
+            name TEXT PRIMARY KEY, capital TEXT, population INTEGER 
+        )""")
+        
     def process_item(self, item, spider):
+        self.cur.execute(""" 
+            INSERT OR IGNORE INTO country VALUES (?,?,?)
+        """,
+            (item['name'] , item['capital'] , item['population'])
+        )
+        self.con.commit()
         return item
+
+
