@@ -7,6 +7,7 @@
 # useful for handling different item types with a single interface
 from itemadapter import ItemAdapter
 import sqlite3
+from scrapy.exceptions import DropItem
 
 class WikiPipeline:
     
@@ -28,5 +29,22 @@ class WikiPipeline:
         )
         self.con.commit()
         return item
+    
+    
+    
+class PopulationPipeline:
+    def process_item(self, item, spider):
+        if int(item['population']) < 50000000:
+            raise DropItem('oops this population is less than 50M ... ')
+        return item     
 
 
+'''
+    yeki dg az karbord hai ke in pipeline ha daran ine ke mitonim
+    etelaat ro filter konim masalan begim faghat on keshvarai save
+    beshan ke jaamiyateshon balata az 50 milion nafar bashe. faghat
+    inke chandta nokte ro bayad raayat konim:
+    1- bayad begim ag bishtar az 50m nabod nemikhyamesh yani drop esh kon k bayad import she
+    2- tooye settings tooye bakhshe pipeline bayadf moarefi beshe va behesh ye adad bedim
+    harchi adad kochiktar bashe taghadome bishtari ham dare. 
+'''
