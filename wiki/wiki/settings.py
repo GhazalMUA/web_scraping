@@ -62,10 +62,10 @@ ROBOTSTXT_OBEY = True
 
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
-ITEM_PIPELINES = {
-   "wiki.pipelines.WikiPipeline": 300,
-   "wiki.pipelines.PopulationPipeline": 200,
-}
+# ITEM_PIPELINES = {
+#    "wiki.pipelines.WikiPipeline": 300,
+#    "wiki.pipelines.PopulationPipeline": 200,
+# }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html

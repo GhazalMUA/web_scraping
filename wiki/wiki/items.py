@@ -13,7 +13,6 @@ class WikiItem(scrapy.Item):
     pass
 
 
-
 def to_strip(value):
     return value.strip()
 

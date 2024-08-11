@@ -29,15 +29,7 @@ class WikiPipeline:
         )
         self.con.commit()
         return item
-    
-    
-    
-class PopulationPipeline:
-    def process_item(self, item, spider):
-        if int(item['population']) < 50000000:
-            raise DropItem('oops this population is less than 50M ... ')
-        return item     
-
+       
 
 '''
     yeki dg az karbord hai ke in pipeline ha daran ine ke mitonim
@@ -48,3 +40,11 @@ class PopulationPipeline:
     2- tooye settings tooye bakhshe pipeline bayadf moarefi beshe va behesh ye adad bedim
     harchi adad kochiktar bashe taghadome bishtari ham dare. 
 '''
+
+    
+class PopulationPipeline:
+    
+    def process_item(self, item, spider):
+        if int(item['population']) < 50000000:
+            raise DropItem('oops this population is less than 50M ... ')
+        return item     
