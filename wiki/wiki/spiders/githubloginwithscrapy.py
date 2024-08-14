@@ -29,7 +29,7 @@ class GithubloginwithscrapySpider(scrapy.Spider):
         'ITEM_PIPELINES': {}
     }
     def parse(self, response , **kwargs):
-        data = {'login':'ghazalmua' , 'password':'8384@Azsd2'}
+        data = {'login':'ghazalmua' , 'password':'*******'}
         
         for hidden in response.css('input[type="hidden"]'):
             data[hidden.attrib['name']]=hidden.attrib.get('value','unknown')

@@ -8,7 +8,7 @@ inspect ro beanim berim too bakhshe network badesh header ha ro negah konim donb
 key `user-agent` migardim va meghdare value esh ro peyda mikonim copy mikonim hala 
 toye codemon age code e zir ro bezanim mizare darkhast befrestim va ok mide
 '''
-
+ 
 import requests 
 
 url= 'https://bama.ir/'

@@ -24,7 +24,7 @@ for form in forms:
         field hayi k hidden hastan ro gereftim rikhtim dakhele dictionary va field hayi ke name
         dashtan ro ham ferestadim be hamon dictionary ke etelaat ro kamel befrestim.
     '''    
-    data.update({'login':'GhazalMUA' , 'password':'8384@Azsd2'})    
+    data.update({'login':'*******' , 'password':'*******'})    
 
 # tooye source code neevshte bod ke action=session yani etelaat e method e post mikhaym bere toooye session ha. pas inja ham ma etelaat ro mifrestim be session ha
 r = session.post(url.format(session) , data=data)    
